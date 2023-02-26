@@ -15,6 +15,7 @@ describe Services::Primes do
 
     it 'returns response when number is provided' do
       expect(subject.process(5)).to eq([2,3,5])
+      expect(subject.process(30)).to eq([2, 3, 5, 7, 11, 13, 17, 19, 23, 29])
     end
   end
 end
