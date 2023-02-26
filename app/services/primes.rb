@@ -1,13 +1,7 @@
 module Services
   class Primes
-    attr_accessor :n
-
-    def initialize(n)
-      @n = n
-    end
-
     # https://www.geeksforgeeks.org/sieve-of-eratosthenes/
-    def process(n = @n)
+    def process(n)
       raise ArgumentError unless n
       raise 'N should be at least 1' if n < 1
 

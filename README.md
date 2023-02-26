@@ -34,7 +34,6 @@
       * Sieve of Eratosthenes
       T(n) = O(n*log(log(n)))
       S(n) = O(n)
-=end
     * (1) Implement algorithm
     * (2) m = (n*n)-1
     * (3) Memoize values, so that we don't redo the work when multiple

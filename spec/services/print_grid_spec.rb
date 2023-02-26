@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Services::Primes do
+describe Services::PrintGrid do
   subject { described_class.new }
 
   describe 'process' do
@@ -12,9 +12,9 @@ describe Services::Primes do
       expect { subject.process(0) }.to raise_error('N should be at least 1')
     end
 
-    it 'returns response when number is provided' do
-      expect(subject.process(5)).to eq([2,3,5])
-      expect(subject.process(30)).to eq([2, 3, 5, 7, 11, 13, 17, 19, 23, 29])
+    it 'when n is 1' do
+      grid = "|       |"
+      expect(subject.process(1)).to eq(grid)
     end
   end
 end
