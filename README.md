@@ -16,6 +16,27 @@
 * How to run the test suite
   * `bundle exec rspec spec/services`
 
+* How to run the service from the console
+  * `p Services::Primes.new.process(50)`
+    `
+    => [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+    `
+  * `puts Services::PrintGrid.new.process(4)`
+    `
+    |       |     2 |     3 |     5 |     7 |
+    |     2 |     4 |     6 |    10 |    14 |
+    |     3 |     6 |     9 |    15 |    21 |
+    |     5 |    10 |    15 |    25 |    35 |
+    |     7 |    14 |    21 |    35 |    49 |
+    `
+* What I'm pleased with
+  * The modular approach the code was built
+
+* What would I do if I had more time?
+  * Implement memoization/caching for prime calculation and grid building
+  * Algorithmic improvements
+  * Edge case improvements in grid
+
 * Overall thought process
     * (0) Find optimal algorithm
       * Sqrt method
@@ -35,9 +56,8 @@
       T(n) = O(n*log(log(n)))
       S(n) = O(n)
     * (1) Implement algorithm
-    * (2) m = (n*n)-1
+    * (2) Print (n+1)X(n+1) grid of numbers
     * (3) Memoize values, so that we don't redo the work when multiple
     * calls are made
     * (4) Save previously compute values to memory and load when
     * instantiating the class.
-    * (5) Print (n+1)X(n+1) grid of numbers
