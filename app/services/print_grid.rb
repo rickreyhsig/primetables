@@ -16,7 +16,6 @@ module Services
         incr += 1
       end
       @grid = start_grid(primes)
-      # byebug
       primes.each {|prime| append_grid(prime, _n, primes) }
       return @grid
     end
@@ -34,13 +33,10 @@ module Services
       _val = val
       idx = 0
       (_n+1).times do
-        # @grid << "|     #{val} "
         @grid << spaced_string(val)
-        # p "#{_val}:#{idx}:#{primes[idx]}:_val*primes[idx]" if idx < primes.length
         val = _val*primes[idx] if idx < primes.length
         idx += 1
       end
-      # p '----'
       @grid << "|\n"
     end
 
@@ -49,9 +45,7 @@ module Services
       space_length = (6-val_length)
       str = ''
       space_length.times { str << ' ' }
-      # str << (val.to_s)
       str << "#{val} "
-      # byebug
       return "|#{str}"
     end
   end
