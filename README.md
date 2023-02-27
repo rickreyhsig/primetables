@@ -35,7 +35,6 @@
 * What would I do if I had more time?
   * Implement memoization/caching for prime calculation and grid building
   * Algorithmic improvements
-  * Edge case improvements in grid
 
 * Overall thought process
     * (0) Find optimal algorithm

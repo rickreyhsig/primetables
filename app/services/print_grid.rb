@@ -24,15 +24,15 @@ module Services
 
     def start_grid(primes)
       grid = "|       "
-      primes.each {|prime| grid << "|     #{prime} " }
+      primes.each { |prime| grid << spaced_string(prime) }
       grid << "|\n"
       return grid
     end
 
-    def append_grid(val, _n, primes)
+    def append_grid(val, n, primes)
       _val = val
       idx = 0
-      (_n+1).times do
+      (n+1).times do
         @grid << spaced_string(val)
         val = _val*primes[idx] if idx < primes.length
         idx += 1
