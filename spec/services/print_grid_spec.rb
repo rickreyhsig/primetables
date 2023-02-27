@@ -21,5 +21,17 @@ describe Services::PrintGrid do
              "|     3 |     6 |     9 |\n"
       expect(subject.process(2)).to eq(grid)
     end
+
+    it 'when n is 3' do
+      grid = "|       |     2 |     3 |     5 |\n"\
+             "|     2 |     4 |     6 |    10 |\n"\
+             "|     3 |     6 |     9 |    15 |\n"\
+             "|     5 |    10 |    15 |    25 |\n"
+      expect(subject.process(3)).to eq(grid)
+    end
+
+    # it 'when n is ....' do
+    #   expect(subject.process(30)).to eq([2, 3, 5, 7, 11, 13, 17, 19, 23, 29])
+    # end
   end
 end
