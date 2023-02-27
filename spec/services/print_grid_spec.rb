@@ -18,7 +18,7 @@ describe Services::PrintGrid do
     it 'when n is 2' do
       grid = "|       |     2 |     3 |\n"\
              "|     2 |     4 |     6 |\n"\
-             "|     3 |     6 |     9 \n"
+             "|     3 |     6 |     9 |\n"
       expect(subject.process(2)).to eq(grid)
     end
   end

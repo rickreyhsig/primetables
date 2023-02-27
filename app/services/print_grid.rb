@@ -16,6 +16,7 @@ module Services
         incr += 1
       end
       @grid = start_grid(primes)
+      # byebug
       primes.each {|prime| append_grid(prime, _n) }
       return @grid
     end
@@ -23,16 +24,17 @@ module Services
     private
 
     def start_grid(primes)
-      grid = "|       |"
-      primes.each {|prime| grid << "     #{prime} " }
+      grid = "|       "
+      primes.each {|prime| grid << "|     #{prime} " }
       grid << "|\n"
       return grid
     end
 
     def append_grid(val, _n)
+      _val = val
       (_n+1).times do
         @grid << "|     #{val} "
-        val += val
+        val += _val
       end
       @grid << "|\n"
       # byebug
